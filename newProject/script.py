@@ -14,11 +14,17 @@ class Group:
 
     
     def add_persone(self,persone:Persone):
-        self.couple.items(persone)
+        self.couple[persone.name] = persone.age
+
+    
+    def print_dict(self):
+        for name , age in self.couple.items():
+            print(f"Name - {name}, Age - {age}")
 
 
 if __name__ == '__main__':
-    pesrone1 = Persone("David" , 16)
+    pesron1 = Persone("David" , 16)
     group1 = Group()
-    group1.add_persone(pesrone1)
+    group1.add_persone(pesron1)
+    group1.print_dict()
     print("END PROGRAM")
